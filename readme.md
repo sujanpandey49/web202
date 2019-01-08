@@ -3,7 +3,9 @@
 Git commands
 Setup git config
 1.git config --global user.name "username"
+
 1.git config --global user.email "abc@gmail.com"
+
 1.git init - initialize an empty Git repo
 1.git status - shows the status of repo
 1.git add - Adds file to be tracked
