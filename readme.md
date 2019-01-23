@@ -6,6 +6,7 @@
 ### Setup git config
 git config --global user.name "sujanpandey49"
 git config --global user.email "sujanpandey49@gmail.com"
+
 1.git config --global user.name "sujanpandey49"
 1.git config --global user.email "sujanpandey49@gmail.com"
 
