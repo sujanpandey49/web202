@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        .container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        .slider {
+            margin: 0px;
+            padding: 0px;
+        }
+        .slider li {
+            transition: all 0.5s linear;
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        img {
+            width: 20vw;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <ul class = "slider">
+            <li class = "current">
+                <img src = "1.jpg" alt = "" >
+            </li>
+            <li> <img src = "2.jpg" alt = "" > </li>
+            <li> <img src = "3.jpg" alt = "" > </li>
+            <li> <img src = "4.jpg" alt = "" > </li>
+            <li> <img src = "5.jpg" alt = "" > </li>
+        </ul>
+    </div>
+
+    <button id = "prev">previous</button>
+    <button id = "next">next</button>
+
+    <script>
+        var images = document.querySelectorAll('img');
+        var currentMargin = 0;
+        var sliderList = document.querySelector('li');
+
+
+
+        var slideLeft =  event => {
+            if(currentMargin >= 25) {
+                currentMargin -= 25;
+                sliderList.style = `margin-left: ${currentMargin}vw`;
+            }
+        };
+
+        var slideRight = event => {
+            currentMargin += 25;
+            sliderList.style = `margin-left: -${currentMargin}vw`;
+        };
+        
+        document.querySelector('#prev').onclick = slideLeft
+        document.querySelector('#next').onclick = slideRight
+
+        var startXposition = 0;
+
+        document.querySelector('.slider').ondragstart = event => {
+            startXPosition = event.screenX;
+        };
+        
+        document.querySelector('.slider').ondragend = event => {
+            if(event.screenX > startXPosition) {
+               slideRight()
+            }else {
+                slideLeft();
+            }
+        };
+    </script>
+
+
+    
+</body>
+</html>
+ 

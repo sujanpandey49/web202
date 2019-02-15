@@ -1,0 +1,49 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <script>
+        "use strict";
+        class Student {
+            constructor(firstName, lastName, address, phone, teacher) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.address = address;
+                this.phone = phone;
+                this.teacherName = teacher;
+            }
+        }
+
+
+        class Teacher {
+            constructor(fullName) {
+                this.fullName = fullName;
+                this.students = [];
+
+            }
+
+            enrollStudent(firstName, lastName, address, phone) {
+                var student = new Student(firstName, lastName, address, phone, this.fullName);
+                this.students.push(student);
+            }
+        }
+
+        var teacher1 = new Teacher('ramesh paudel');
+        var teacher2 = new Teacher('raju maharjan');
+        teacher1.enrollStudent('santosh', 'ghimire', 'nayabato', 94888454858);
+        teacher1.enrollStudent('luman', 'awale', 'lagankhel', 94888454858);
+        teacher2.enrollStudent('rajiv', 'maharjan', 'sundhara', 94888454858);
+        teacher2.enrollStudent('sagar', 'khadgi', 'koteshwor', 94888454858);
+
+
+
+
+    </script>
+    
+</body>
+</html>

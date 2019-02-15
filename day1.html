@@ -1,28 +1,421 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> </title>
-    </head>
-    <body>
-        <script>
-            /*var marks = prompt("enter the marks");
-            var passMarks = prompt("enter the pass marks");
 
-            if(marks > passMarks) {
-                alert("passed");
+<head>
+    <title> </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!--
+        <button type = "button" class = "showform"> Show Form </button>
+        <div class = "form">
+
+        </div>
+        <div class = "clear">
+
+        </div>
+    -->
+ 
+    <!--
+    <div class="container">
+        <button type = "button"> AddToDo </button>
+        <button type = "button" onclick = hideShow(this)> Hide/Show </button> 
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Todo List </th>
+                <th> Status </th>
+            </tr>
+        </thead>
+
+        <tbody>
+    
+        </tbody>
+
+    </table>
+    
+    <div class = "ShowHidden">
+        <p style = "font-size: 18px;padding: 5px;background-color: rgb(109, 95, 134);"> Hidden ToDo List </p>
+        <p> </p>
+    </div> 
+    -->
+
+    <!--
+    <div class = "container"> 
+        <form>
+            <input type="text">
+            <button type = "button"> submit </button>
+        </form>
+    </div>
+    -->
+
+    <div class = "slideshow-container">
+        <div class = "myslides">
+            <img src = "banner-5.jpg">
+        </div>
+        <div class = "myslides">
+            <img src = "Fotolia.jpg">
+        </div>
+        <div class = "myslides">
+            <img src = "template-2.jpg">
+        </div>
+        <div class = "myslides">
+            <img src = "true.jpg">
+        </div>
+        <a class = "prev"  onclick = 'showSlides()'> &#10094; </a>
+        <a class = "next"> &#10095;</a>
+
+    </div>
+    
+
+    <script>
+        /*var marks = prompt("enter the marks");
+        var passMarks = prompt("enter the pass marks");
+ 
+        if(marks > passMarks) {
+            alert("passed");
+        }
+        else{
+            alert("failed");
+        } */
+
+        /*var bankBalance = prompt('Enter your bank ')
+        var number = prompt("enter any number");
+        number = Number(number);
+        if (!isNaN(number)){
+            alert(number);
+        }
+        else{
+            alert("this is not a number");
+            var number2 = prompt("enter new number");
+            if
+ 
+        }
+        */
+
+        /*var firstName = prompt("enter your first name");
+        var lastName = prompt("enter your last name");
+        var fullName = firstName +" " + lastName;
+        alert(fullName);
+ 
+        var gender = prompt("enter your gender");
+        var age = prompt("enter your age");
+        if (gender == "male"){
+            alert(fullname  + " "+ age);
+        }
+        else{
+            alert(fullName + " "+ age);
+        }
+        */
+        /*var a = prompt("enter the first number");
+        var b = prompt("enter the second number");
+        c = Number(a);
+        d = Number(b);
+ 
+ 
+        function subtract(a,b) {
+            return a-b;
+        }
+        alert(`the subtract is ${subtract(a,b)}`);
+ 
+ 
+ 
+        function multiply(c,d){
+            return c*d;
+        }
+        alert(`the multiply is ${multiply(c,d)}`);
+        */
+
+        /*function getMonth(monthNumber){
+            var arr = ["january","february","march","april","may","june","july","august","september","october","november","december"];  
+            return positionCheck(monthNumber,arr);   
+        }
+ 
+         function monthCheck(monthNumber){
+            var month = getMonth(monthNumber);
+            if(month){
+                alert(`the month is ${month}`);
             }
             else{
-                alert("failed");
-            } */
+                alert("input the correct data");
+            }
+        }
+ 
+        function positionCheck(monthNumber,arr){
+            if(monthNumber > 12){
+                return;
+            }else{
+                return arr[monthNumber-1];
+            }
+        }
+        var monthNumber = prompt("enter the month number");
+ 
+       // positionCheck(monthNumber,arr);
+        monthCheck(monthNumber);
+        */
+        /* function random(number){
+             return Math.ceil(Math.random()*number);
+         }
+ 
+ 
+         /*var interval = setInterval(function() {
+             document.body.style.background = `rgba(${random(255)},${random(255)},${random(255)},1)`;
+         },2000);*/
 
-            var bankBalance = prompt("enter your bank balance");
-            var phone = prompt("enter your phone price");
-            if (bankBalance > phone){
-                alert("u can buy mobile");
+        /*
+        var su = document.querySelector('button');
+        su.onclick = function() {
+            document.body.style.background = `rgba(${random(255)},${random(255)},${random(255)},1)`;
+
+        };
+         
+        su.onmouseover = function() {
+            document.querySelector('h4').classList.add('large');
+         }
+
+        var sp = document.querySelector('h4');
+        sp.onclick = function(){
+            document.querySelector('h4').classList.add('small');
+        }
+        */
+        /*var num = prompt("enter the number");
+        var name = "enter the name";
+        var arr = [];
+        var i;
+        for(i=0; i<num; i++){
+            var question = prompt(name);
+            arr.push(question);
+        }
+        console.log(arr);
+        */
+        // <tr>
+        //     <td> name 1</td>
+        //     <td>  <button type = "button"> remove </button> </td>
+        // </tr>
+        /*document.getElementsByClassName('container')[0].children[0].onclick = function () {
+            var ask = prompt("enter the name");
+            var tableRow = document.createElement('tr');
+            var nameDescription = document.createElement('td');
+            var tableDescription = document.createElement('td');
+            var button = document.createElement('button');
+            var button2 = document.createElement('button');
+            button.innerText = 'remove';
+            button2.innerText = 'hide';
+            button.setAttribute('onclick', 'remove(this)');
+            button2.setAttribute('onclick','hide(this)');
+            
+
+            //Appending button to table description
+            tableDescription.appendChild(button);
+            tableDescription.appendChild(button2);
+            nameDescription.innerText = ask;
+            tableRow.appendChild(nameDescription);
+            tableRow.appendChild(tableDescription);
+            document.querySelector('tbody').appendChild(tableRow);
+        }
+
+        function remove(index) {
+            index.parentElement.parentElement.remove();  // array cant be removed only element can be removed
+        }
+
+        function hide(td) {
+            td.parentElement.parentElement.classList.toggle('hide');
+        }
+
+        function hideShow(hs) {
+           hs.parentElement.parentElement.classList.toggle('show');
+        }
+        */
+        
+
+        /*<form action="action_page.php" style="border:1px solid #ccc">
+            <div class="container">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </div>
+        </form>
+        */
+        // creating the form elements......
+        /*document.getElementsByTagName('button')[0].onclick = function() {
+            var frm = document.createElement('form');
+            var dv1 = document.createElement('div');
+            var heading = document.createElement('h1');
+            var prgrph1 = document.createElement('p');
+            var line = document.createElement('hr');
+            var labl1 = document.createElement('label');
+            var labl2 = document.createElement('label');
+            var labl3 = document.createElement('label');
+            var labl4 = document.createElement('label');
+            var bld1 = document.createElement('b');
+            var bld2 = document.createElement('b');
+            var bld3 = document.createElement('b');
+            var inpt1 = document.createElement('input');
+            var inpt2 = document.createElement('input');
+            var inpt3 = document.createElement('input');
+            var inpt4 = document.createElement('input');
+            var prgrph2 = document.createElement('p');
+            var anchr = document.createElement('a');
+            var dv2 = document.createElement('div');
+            var btn1 = document.createElement('button');
+            var btn2 = document.createElement('button');
+
+            // appending the child elements
+            frm.appendChild(dv1);
+
+            dv1.appendChild(heading);
+            heading.innerText = "Sign Up";
+
+            dv1.appendChild(prgrph1);
+            prgrph1.innerText = "Please fill in this form to create an account";
+
+            dv1.appendChild(line);
+
+            dv1.appendChild(labl1);
+            labl1.setAttribute('for','email');
+            dv1.setAttribute('class','container');
+            labl1.appendChild(bld1);
+            bld1.innerText = "Email";
+
+            dv1.appendChild(inpt1);
+            inpt1.setAttribute('type','text');
+            inpt1.setAttribute('Placeholder','Enter Password');
+            inpt1.setAttribute('name','psw');
+            inpt1.setAttribute('reuired','required');
+
+            dv1.appendChild(labl2);
+            labl2.appendChild(bld2);
+            labl2.setAttribute('for','psw')
+            bld2.innerText = "Password";
+            dv1.appendChild(inpt2);
+            inpt2.setAttribute('type','password');
+            inpt2.setAttribute('Placeholder','Enter Email');
+            inpt2.setAttribute('name','psw');
+            inpt2.setAttribute('reuired','required');
+
+            dv1.appendChild(labl3);
+            labl3.setAttribute('for','psw-repeat');
+            labl3.appendChild(bld3);
+            bld3.innerText = "Repeat Password";
+            dv1.appendChild(inpt3);
+            inpt3.setAttribute('type','password');
+            inpt3.setAttribute('Placeholder','Repeat Password');
+            inpt3.setAttribute('name','psw-repeat');
+            inpt3.setAttribute('reuired','required');
+
+            dv1.appendChild(inpt4);
+            inpt4.setAttribute('type','checkbox');
+            inpt4.setAttribute('checked','checked');
+            inpt4.setAttribute('name','remember');
+            dv1.appendChild(labl4);
+            labl4.innerText = "Remember Me";
+
+
+            dv1.appendChild(prgrph2);
+            prgrph2.innerText = "By creating an account you agree to our ";
+            prgrph2.appendChild(anchr);
+            anchr.setAttribute('href','#');
+            anchr.innerHTML = "Terms & Privacy";
+
+            dv2.setAttribute('class','clearfix');
+            dv2.appendChild(btn1);
+            btn1.setAttribute('type','button');
+            btn1.setAttribute('class','cancelbtn');
+            btn1.innerText = "Cancel";
+
+            dv2.appendChild(btn2);
+            btn2.setAttribute('type','submit');
+            btn2.setAttribute('class','signupbtn');
+            btn2.innerText = "Sign Up";
+
+            dv1.appendChild(dv2);
+
+           document.getElementsByClassName('form')[0].appendChild(frm);
+        }
+        */
+
+
+        /* var imgresize = function(event) {
+            console.log('this event', event)
+            windowHeight = event.path[0].outerHeight;   
+            windowWidth = event.path[0].innerWidth; 
+            
+            console.log('window height', windowHeight);
+            console.log('window width', windowWidth);
+            
+            if (windowHeight > 500) {
+                document.querySelector("form").style = "position: absolute;left: 0px;background:'black";
+            }else{
+                document.querySelector("form").style = "position: absolute; top: 300px";
             }
-            else {
-                alert("u cannot buy mobile");
+
+                document.querySelector("body").style = `background-color: rgb(${Math.ceil(Math.random()*255)}, ${Math.ceil(Math.random()*255)}, ${Math.ceil(Math.random()*255)}, ${1})`;                
+            if (windowWidth > 700) {
+            }else{
+                document.querySelector("body").style = "background-color: blueviolet;"
             }
-        </script>
-    </body>
+            
+
+        }
+
+
+
+        window.addEventListener('resize',imgresize);
+
+        */
+
+        var slideIndex = 0;
+
+        function showSlides() {
+            var i;
+            var slides = document.querySelectorAll('img');
+            for (i = 0;i < slides.length;i++) {
+                slides[i].style.display = 'none';
+            }
+            if(slideIndex > slides.length - 1){
+                slideIndex = 0
+            }
+            slideIndex++;
+            slides[slideIndex-1].style.display = "block"; 
+            console.log('index', slideIndex);
+        }
+
+        
+
+
+
+
+
+        
+    
+         
+
+
+    </script>
+</body>
+
 </html>
