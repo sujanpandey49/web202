@@ -11,15 +11,19 @@
         <div class = "dice">
             <p> player 1 </p>
             <img id = "img1" src = "dice6.jpg">
+            <h4 class = "ins1">  </h4>
         </div>
         <div class = "dice">
             <p> player 2 </p>
             <img id = "img2" src = "dice6.jpg">
+            <h4 class = "ins2">  </h4>
         </div>
+        <button type = "button"> roll dice </button>
     </div>
     <script>
         var arr1 = [];
         var arr2 = [];
+        document.querySelector('button').onclick = function() {
         var randomNumber1 = Math.ceil(Math.random()*6);
         arr1.push(randomNumber1);
         var playerOneImages = "dice" + randomNumber1 + ".jpg";
@@ -29,6 +33,25 @@
 
         document.querySelector("#img1").setAttribute('src', playerOneImages);
         document.querySelector("#img2").setAttribute('src', playerTwoImages);
+
+        function getSum(total, num) {
+            return total + num;
+        }
+        document.querySelector(".ins1").innerHTML = arr1.reduce(getSum);
+        document.querySelector(".ins2").innerHTML = arr2.reduce(getSum);
+
+        var check1 = arr1.reduce(getSum);
+        var check2 = arr2.reduce(getSum);
+        if( check1 >= 50) {
+            alert('player 1 wins');
+        }
+        if( check2 >= 50) {
+            alert('player 2 wins');
+        }
+        }
+
+        
+        
 
 
 
