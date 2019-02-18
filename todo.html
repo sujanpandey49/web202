@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="st yle.css" />
+    <style>
+        .table {
+            border-collapse: collapse;
+            box-sizing: border-box;
+            width: 25%;
+            float: left;
+            margin-top: 10px;
+            margin-left: 10%;
+        }
+        th,td {
+            border: 1px solid black;
+            font-size: 18px;
+            padding: 5px;
+            text-align: left;
+            background-color: rgb(109, 95, 134);
+        }
+
+        .table button {
+            font-size: 18px;
+            padding: 5px;
+            box-sizing: border-box;
+            width: 50%;
+        }
+        .container {
+            width: 20%;
+            float: left;
+        }
+        .container > button {
+            font-size: 18px;
+            padding: 5px;
+            box-sizing: border-box;
+            margin-top: 100px;
+        }
+
+        .show .hide{
+            display: block !important;
+        }
+
+        .hide {
+            display: none;
+        }
+        .ShowHidden {
+            width: 20%;
+            float: left;
+            padding: 5px;
+            margin-left: 10%;
+            margin-top: -12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button type = "button"> AddToDo </button>
+        <button type = "button" onclick = hideShow(this)> Hide/Show </button> 
+    </div>
+        
+        
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Todo List </th>
+                <th> Status </th>
+            </tr>
+         </thead>
+        
+        <tbody>
+            
+        </tbody>
+        
+    </table> 
+
+    <script>
+
+        class Todo {
+            constructor() {
+
+            }
+
+            createElement() {
+                var tableRow = document.createElement('tr');
+                var nameDescription = document.createElement('td');
+                var tableDescription = document.createElement('td');
+                var button = document.createElement('button');
+                var button2 = document.createElement('button');
+            }
+
+            setAttribute() {
+                button.innerText = 'remove';
+                button2.innerText = 'hide';
+                button.setAttribute('onclick', 'remove(this)');
+                button2.setAttribute('onclick','hide(this)');
+            }
+
+            appendChild() {
+                tableDescription.appendChild(button);
+                tableDescription.appendChild(button2);
+                nameDescription.innerText = ask;
+                tableRow.appendChild(nameDescription);
+                tableRow.appendChild(tableDescription);
+                document.querySelector('tbody').appendChild(tableRow);
+            }
+        }
+        document.getElementsByClassName('container')[0].children[0].onclick = function () {
+            var ask = prompt("enter the name");
+            createElement();
+            setAttribute();
+            appendChild();
+        }
+            
+            
+            
+
+            
+        
+
+        function remove(index) {
+            index.parentElement.parentElement.remove();  // array cant be removed only element can be removed
+        }
+
+        function hide(td) {
+            td.parentElement.parentElement.classList.toggle('hide');
+        }
+
+        function hideShow(hs) {
+           hs.parentElement.parentElement.classList.toggle('show');
+        }
+    
+    </script>
+    
+</body>
+</html>
