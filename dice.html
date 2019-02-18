@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
-    <div class = "container">
-        <div class = "dice">
-            <p> player 1 </p>
-            <img id = "img1" src = "dice6.jpg">
-            <h4 class = "ins1">  </h4>
+    <head>
+        <meta charset="utf-8" />
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="dice">
+                <p>player 1</p>
+                <img id="img1" src="dice6.jpg" />
+                <h4 class="ins1"></h4>
+            </div>
+            <div class="dice">
+                <p>player 2</p>
+                <img id="img2" src="dice6.jpg" />
+                <h4 class="ins2"></h4>
+            </div>
+            <button type="button">roll dice</button>
         </div>
-        <div class = "dice">
-            <p> player 2 </p>
-            <img id = "img2" src = "dice6.jpg">
-            <h4 class = "ins2">  </h4>
-        </div>
-        <button type = "button"> roll dice </button>
-    </div>
-    <script>
-        var arr1 = [];
-        var arr2 = [];
-        document.querySelector('button').onclick = function() {
-        var randomNumber1 = Math.ceil(Math.random()*6);
-        arr1.push(randomNumber1);
-        var playerOneImages = "dice" + randomNumber1 + ".jpg";
-        var randomNumber2 = Math.ceil(Math.random()*6);
-        arr2.push(randomNumber2);
-        var playerTwoImages = "dice" + randomNumber2 + ".jpg";
+        <script>
+            var arr1 = [];
+            var arr2 = [];
 
-        document.querySelector("#img1").setAttribute('src', playerOneImages);
-        document.querySelector("#img2").setAttribute('src', playerTwoImages);
+            function rollDice(){
+                return Math.ceil(Math.random() * 6)
+            }
 
-        function getSum(total, num) {
-            return total + num;
-        }
-        document.querySelector(".ins1").innerHTML = arr1.reduce(getSum);
-        document.querySelector(".ins2").innerHTML = arr2.reduce(getSum);
+            document.querySelector("button").onclick = function() {
+                var randomNumber1 = rollDice();
+                var randomNumber2 = rollDice();
+                
+                arr1.push(randomNumber1);
+                arr2.push(randomNumber2);
 
-        var check1 = arr1.reduce(getSum);
-        var check2 = arr2.reduce(getSum);
-        if( check1 >= 50) {
-            alert('player 1 wins');
-        }
-        if( check2 >= 50) {
-            alert('player 2 wins');
-        }
-        }
+                var playerOneImages = "dice" + randomNumber1 + ".jpg";
+                var playerTwoImages = "dice" + randomNumber2 + ".jpg";
 
-        
-        
+                document
+                    .querySelector("#img1")
+                    .setAttribute("src", playerOneImages);
 
+                document
+                    .querySelector("#img2")
+                    .setAttribute("src", playerTwoImages);
 
+                function getSum(total, num) {
+                    return total + num;
+                }
 
-    </script>
-    
-</body>
+                var check1 = arr1.reduce(getSum);
+                var check2 = arr2.reduce(getSum);
+
+                document.querySelector(".ins1").innerHTML = check1;
+                document.querySelector(".ins2").innerHTML = check2;
+
+                if (check1 >= 50) {
+                    alert("player 1 wins");
+                }
+                if (check2 >= 50) {
+                    alert("player 2 wins");
+                }
+            };
+        </script>
+    </body>
 </html>
